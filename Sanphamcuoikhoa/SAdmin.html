@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/Admin.css">
+</head>
+<body style="background-color: rgb(53, 53, 53);">
+
+    <div id="loadingOverlay">
+        <div class="text-center">
+            <div class="spinner-border text-danger mb-3" style="width:3rem;height:3rem;"></div>
+            <p class="text-muted">Đang kiểm tra quyền truy cập...</p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="src/image/Logo.png" alt="Logo" width="80" height="73" class="d-inline-block align-text-top">
+            <h1 style="color: rgb(0, 110, 255);">ADMIN PAGE</h1>
+            <div class="collapse navbar-collapse"></div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 admin-sidebar">
+                <h4 class="p-3" style="color: rgb(255, 0, 0);">Admin Setting</h4>
+                <a href="Admin.html" id="menu-products">🎵 Quản lý nhạc</a>
+                <a href="SData Admin.html" id="menu-analytics">📊 Thống kê</a>
+                <a href="SAdmin.html" id="menu-settings" style="background-color: #2c2c2c;">⚙️ Cài đặt</a>
+                <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+                <a href="Main.html" type="button"> Back To Main Page </a>
+            </div>
+
+            <div class="col-10 p-4">
+                <h3 class="text-white mb-4">👥 Quản Lý Tài Khoản Người Dùng</h3>
+                
+                <div class="table-responsive bg-dark p-3 rounded shadow">
+                    <table class="table table-dark table-hover table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên tài khoản (Username)</th>
+                                <th>Email</th>
+                                <th>Quyền hạn (Role)</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+      <!-- Core Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+      <!-- Auth -->
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+      <!-- Firestore -->
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+     <!-- Firebase Config -->
+     <script src="src/js/Firebase-config.js"></script>
+
+    <script src="src/js/SAdmin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/Admin.css">
+
+
+</head>
+<body style="background-color: rgb(53, 53, 53);">
+
+      <!-- Loading: hiển thị trong khi kiểm tra session -->
+      <div id="loadingOverlay">
+        <div class="text-center">
+            <div class="spinner-border text-danger mb-3" style="width:3rem;height:3rem;"></div>
+            <p class="text-muted">Đang kiểm tra quyền truy cập...</p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="src/image/Logo.png" alt="Logo" width="80" height="73" class="d-inline-block align-text-top">
+            <h1 style="color: rgb(0, 110, 255);">ADMIN PAGE</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container-fluid">
+        <div class="row">
+      
+          <!-- SIDEBAR -->
+          <div class="col-2 admin-sidebar">
+            <h4 class="p-3" style="color: rgb(255, 0, 0);">Admin Setting</h4>
+            <a href="Admin.html" id="menu-products">🎵 Quản lý nhạc</a>
+            <a href="SData Admin.html" id="menu-analytics">📊 Thống kê</a>
+            <a href="SAdmin.html" id="menu-settings">⚙️ Cài đặt</a>
+            <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+            <a href="Main.html" type="button"> Back To Main Page </a>
+          </div>
+      
+          <!-- MAIN -->
+          <div class="col-10 p-4 text-white">
+      
+            <h2>🎵Quản lý bài hát</h2>
+      
+            <!-- FORM -->
+            <div class="card bg-dark p-3 mb-4 shadow">
+              <form id="productForm">
+                
+                <div class="row g-2 mb-3">
+                  <div class="col-md-3">
+                    <input id="product_nameS" class="form-control" type="text" placeholder="Tên bài">
+                  </div>
+                  <div class="col-md-3">
+                    <input id="product_name" class="form-control" type="text" placeholder="Ca sĩ">
+                  </div>
+                  <div class="col-md-3">
+                    <input id="product_imageUrl" class="form-control" type="url" placeholder="Link ảnh">
+                  </div>
+                  <div class="col-md-3">
+                    <input id="product_songURL" class="form-control" type="url" placeholder="Link nhạc">
+                  </div>
+                </div>
+
+                <div class="row g-3 align-items-stretch">
+                  
+                  <div class="col-md-10">
+                    <div class="p-2 rounded d-flex flex-wrap align-items-center gap-3 h-100" style="background-color: #2b2b2b; border: 1px solid #444;">
+                        <span class="text-white-50 mb-0 fw-bold" style="font-size: 0.9rem;">Chọn thể loại:</span>
+                        
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="V-Pop" id="genreVpop">
+                            <label class="form-check-label text-white" for="genreVpop">V-Pop</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Rap Việt" id="genreRap">
+                            <label class="form-check-label text-white" for="genreRap">Rap Việt</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Vinahouse" id="genreVina">
+                            <label class="form-check-label text-white" for="genreVina">Vinahouse</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Lofi" id="genreLofi">
+                            <label class="form-check-label text-white" for="genreLofi">Lofi</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Chill" id="genreChill">
+                            <label class="form-check-label text-white" for="genreChill">Chill</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Bolero" id="genreBolero">
+                            <label class="form-check-label text-white" for="genreBolero">Bolero</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Speedup" id="genreSpeedup">
+                            <label class="form-check-label text-white" for="genreSpeedup">Speedup</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Remix" id="genreRemix">
+                            <label class="form-check-label text-white" for="genreRemix">Remix</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Love" id="genreLove">
+                            <label class="form-check-label text-white" for="genreLove">Love</label>
+                        </div>
+                        <div class="form-check mb-0">
+                            <input class="form-check-input music-genre-checkbox" type="checkbox" value="Sad" id="genreSad">
+                            <label class="form-check-label text-white" for="genreSad">Sad</label>
+                        </div>
+                    </div>
+                  </div>
+            
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-success w-100 h-100 fw-bold" style="min-height: 50px; font-size: 1.1rem;">Thêm</button>
+                  </div>
+            
+                </div>
+              </form>
+            </div>
+      
+            <!-- TABLE -->
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tên bài</th>
+                  <th>Ca sĩ</th>
+                  <th>Thể loại</th>
+                  <th>Hành động</th>  
+                </tr>
+              </thead>
+              <tbody id="productTableBody">
+                <!-- Data mẫu hiển thị trước khi Firebase load — sẽ bị replace -->
+                <tr>
+                  <td>1</td>
+                  <td>Bài hát 1</td>
+                  <td>Ca sĩ A</td>
+                  <td>Thể loại B</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm">Sửa</button>
+                    <button class="btn btn-danger btn-sm">Xóa</button>
+                  </td>
+                </tr>
+      
+                <tr>
+                  <td>2</td>
+                  <td>Bài hát 2</td>
+                  <td>Ca sĩ B</td>
+                  <td>Thể loại B</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm">Sửa</button>
+                    <button class="btn btn-danger btn-sm">Xóa</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      
+          </div>
+      
+        </div>
+      </div>
+
+      <div class="modal fade" id="editProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border border-secondary shadow-lg">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-info" id="editModalLabel">✏️ Chỉnh Sửa Bài Hát</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="editProductId">
+    
+                    <div class="mb-3">
+                        <label for="editSongName" class="form-label">Tên bài hát</label>
+                        <input type="text" class="form-control bg-secondary text-white border-0" id="editSongName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editArtistName" class="form-label">Ca sĩ</label>
+                        <input type="text" class="form-control bg-secondary text-white border-0" id="editArtistName" required>
+                    </div>
+                    <div class="mb-3 p-3 rounded" style="border: 1px solid #444; background-color: #2b2b2b;">
+                      <label class="form-label text-white-50 small d-block mb-2">Chọn thể loại:</label>
+                      <div class="d-flex flex-wrap gap-3">
+                          
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="V-Pop" id="editGenreVPop">
+                              <label class="form-check-label text-white" for="editGenreVPop">V-Pop</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Rap Việt" id="editGenreRapViet">
+                              <label class="form-check-label text-white" for="editGenreRapViet">Rap Việt</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Vinahouse" id="editGenreVinahouse">
+                              <label class="form-check-label text-white" for="editGenreVinahouse">Vinahouse</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Lofi" id="editGenreLofi">
+                              <label class="form-check-label text-white" for="editGenreLofi">Lofi</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Chill" id="editGenreChill">
+                              <label class="form-check-label text-white" for="editGenreChill">Chill</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Bolero" id="editGenreBolero">
+                              <label class="form-check-label text-white" for="editGenreBolero">Bolero</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Speedup" id="editGenreSpeedup">
+                              <label class="form-check-label text-white" for="editGenreSpeedup">Speedup</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Remix" id="editGenreRemix">
+                              <label class="form-check-label text-white" for="editGenreRemix">Remix</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Love" id="editGenreLove">
+                              <label class="form-check-label text-white" for="editGenreLove">Love</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input edit-genre-checkbox" type="checkbox" value="Sad" id="editGenreSad">
+                              <label class="form-check-label text-white" for="editGenreSad">Sad</label>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveUpdate">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+     <!-- Core Firebase -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+     <!-- Auth -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+     <!-- Firestore -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- Firebase Config -->
+    <script src="src/js/Firebase-config.js"></script>
+    
+    
+    
+    <!-- Script  -->
+    <script src="src/js/Admin.js"></script>
+</body>
+</html>

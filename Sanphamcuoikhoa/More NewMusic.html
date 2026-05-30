@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/More NewMusic.css">
+
+</head>
+<body style="background-color: rgb(63, 63, 63);">
+    
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+
+          <!-- Logo -->
+            <img src="src/image/Logo.png" alt="Logo" width="80" height="73" class="d-inline-block align-text-top">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+
+           
+
+            <!-- User dropdown -->
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    <img src="src/image/User.png" class="avatar" width="80" height="73">
+                    <span id="nav-username" class="text-white fw-bold"></span></a>
+  
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li id="login-item">
+                        <a class="dropdown-item" href="Login.html">Đăng nhập</a></li>
+                    <li id="register-item">
+                        <a class="dropdown-item" href="Register.html">Đăng ký</a></li>
+                    <li id="logout-item" class="d-none">
+                        <a class="dropdown-item text-danger" href="Login.html" id="btnLogout">Đăng xuất</a></li> 
+                    <li>
+                      <a href="Admin.html" class="dropdown-item text-primary">Admin Page (Admin Account Required)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <a href="Main.html"><img src="src/image/Home.png" alt="Home"></a>
+        <a href="#"><img src="src/image/Trending.png" alt="trending"></a>
+        <a href="#"><img src="src/image/playlist.png" alt="playlist"></a>
+      </div>
+
+      <div class="music-card" style="padding: 20px;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="text-white mb-0">Những bài hát mới nhất</h3> 
+            <button class="btn btn-danger btn-sm" onclick="window.location.href='Main.html'">Quay lại trang chủ</button>
+        </div>
+        
+        <div class="row" id="all-music-container"></div>
+    </div>
+    
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Core Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <!-- Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- Firebase Config -->
+    <script src="src/js/Firebase-config.js"></script> 
+       
+    <!-- Script  -->
+    <script src="src/js/More NewMusic.js"></script>
+</body>
+</html>

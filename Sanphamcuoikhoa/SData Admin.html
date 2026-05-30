@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống Kê Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/Admin.css">
+</head>
+<body style="background-color: rgb(53, 53, 53);">
+
+    <div id="loadingOverlay">
+        <div class="text-center">
+            <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;"></div>
+            <p class="text-muted">Đang kiểm tra quyền truy cập...</p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="src/image/Logo.png" alt="Logo" width="80" height="73" class="d-inline-block align-text-top">
+            <h1 style="color: rgb(0, 110, 255);">ADMIN PAGE</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 admin-sidebar">
+                <h4 class="p-3" style="color: rgb(255, 0, 0);">Admin Setting</h4>
+                <a href="Admin.html" id="menu-products">🎵 Quản lý nhạc</a>
+                <a href="SData Admin.html" id="menu-analytics" style="background-color: #2c2c2c;">📊 Thống kê</a>
+                <a href="SAdmin.html" id="menu-settings">⚙️ Cài đặt</a>
+                <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+                <a href="Main.html" type="button"> Back To Main Page </a>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <h3 class="text-white mb-4">📊 Thống Kê Dữ Liệu</h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card bg-dark text-white p-3 h-100">
+                            <h5 class="mb-3 text-warning">🎧 Top 5 Thể Loại Nhiều Nhất</h5>
+                            <div id="top-genres-container">Đang tải...</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-dark text-white p-3 h-100">
+                            <h5 class="mb-3 text-info">🔥 Top 5 Bài Hát Hot Nhất</h5>
+                            <div id="top-songs-container">Đang tải...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="src/js/SData Admin.js"></script>
+</body>
+</html>
